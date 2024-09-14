@@ -1,0 +1,17 @@
+import pytesseract
+from PIL import Image
+
+# Path to the Tesseract executable
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+# Path to the image
+image_path = r'C:\Users\sudip\OneDrive\Pictures\Screenshots\tryocr.png'
+
+# Open the image using PIL
+image = Image.open(image_path)
+
+# Perform OCR on the image
+text = pytesseract.image_to_string(image,lang='san')
+
+# Print the extracted text
+print(text)
